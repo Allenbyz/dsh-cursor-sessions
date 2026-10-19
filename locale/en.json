@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Cursor Sessions",
+    "description": "Cursor-style chat list: unsent drafts stay visible and titled by their text, New Session reuses the empty draft instead of stacking placeholders, and one click discards a draft."
+  }
+}

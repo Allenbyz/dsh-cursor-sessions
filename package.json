@@ -1,0 +1,64 @@
+{
+  "name": "dsh-cursor-sessions",
+  "version": "0.1.0",
+  "description": "Cursor-style session management for DeepSeek Harness: blank sessions become visible draft chats with live preview titles, New Session reuses an empty draft instead of stacking placeholders, and clicking a draft restores its unsent text",
+  "license": "MIT",
+  "author": "Allenjsgs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allenbyz/dsh-cursor-sessions.git"
+  },
+  "homepage": "https://github.com/Allenbyz/dsh-cursor-sessions#readme",
+  "bugs": {
+    "url": "https://github.com/Allenbyz/dsh-cursor-sessions/issues"
+  },
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "cursor",
+    "session-drafts",
+    "session-management"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.1 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

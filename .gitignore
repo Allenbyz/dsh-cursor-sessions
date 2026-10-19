@@ -1,0 +1,15 @@
+# 依赖 / 构建产物（本项目无构建步骤，保留以防火候）
+node_modules/
+.pnpm-store/
+.npm-cache/
+*.tgz
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 测试与日志
+coverage/
+*.log

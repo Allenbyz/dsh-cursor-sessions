@@ -1,0 +1,14 @@
+# 把 dsh-cursor-sessions 挂载进 DSH profile。
+#
+# 这个包本身没有 host 行为：真正的工作全部在浏览器半边（client.js）。
+# host 半边的 index.js 只是一个空插件，它的作用是让 Loader 里存在一个启用的
+# 条目 —— dsh-client-modules 的扫描器只服务「已启用、且 package.json 声明了
+# dsh.client」的插件包。因此这一层是标准的 Profile Bundle 安装通道：
+#
+#   dsh plugin --profile <profile> add github:Allenbyz/dsh-cursor-sessions
+#   或（发布 npm 后）dsh plugin --profile <profile> add dsh-cursor-sessions
+#
+# 安装后插件会随 Host 重启（或 HMR）进入 Web 的 boot graph。
+- insert:
+    - id: cursor-sessions
+      name: dsh-cursor-sessions
